@@ -1,6 +1,10 @@
 
+var url = window.location.href;
+
+
 if (navigator.serviceWorker) {
-    navigator.serviceWorker.register('/sw.js');
+    var swLocation = url.includes('localhost') ? '/sw.js' : '/twittor/sw.js';
+    navigator.serviceWorker.register(swLocation);
 }
 // Referencias de jQuery
 
